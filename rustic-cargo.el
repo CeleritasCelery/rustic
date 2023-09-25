@@ -92,6 +92,11 @@ instead of applying the default arguments from `rustic-default-test-arguments'."
   :type 'string
   :group 'rustic-cargo)
 
+(defcustom rustic-cargo-bench-arguments ""
+  "Default arguments when running 'cargo bench'."
+  :type 'string
+  :group 'rustic-cargo)
+
 (defcustom rustic-cargo-build-arguments ""
   "Default arguments when running 'cargo build'."
   :type 'string
@@ -712,10 +717,15 @@ When calling this function from `rustic-popup-mode', always use the value of
                               ,@(split-string rustic-cargo-check-arguments))))
 
 ;;;###autoload
-(defun rustic-cargo-bench ()
+(defun rustic-cargo-bench (&optional arg)
   "Run 'cargo bench' for the current project."
-  (interactive)
-  (rustic-run-cargo-command (list (rustic-cargo-bin) "bench")))
+  (interactive "P")
+  (when arg
+    (setq rustic-cargo-bench-arguments
+          (read-string "Cargo bench arguments: " "")))
+  (rustic-run-cargo-command `(, (rustic-cargo-bin)
+                                "bench"
+                                ,@(split-string rustic-cargo-bench-arguments))))
 
 ;;;###autoload
 (defun rustic-cargo-build-doc ()
