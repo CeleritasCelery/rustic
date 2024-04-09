@@ -728,6 +728,13 @@ When calling this function from `rustic-popup-mode', always use the value of
                                 ,@(split-string rustic-cargo-bench-arguments))))
 
 ;;;###autoload
+(defun rustic-cargo-bench-rerun ()
+  "Rerun 'cargo bench' with previous arguments."
+  (interactive)
+  (let ((default-directory (or rustic-compilation-directory default-directory)))
+    (rustic-cargo-bench)))
+
+;;;###autoload
 (defun rustic-cargo-build-doc ()
   "Build the documentation for the current project."
   (interactive)
