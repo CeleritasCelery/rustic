@@ -2,6 +2,7 @@
 ;; Before editing, eval (load-file "test-helper.el")
 
 (require 'rustic)
+(require 'test-helper)
 
 (ert-deftest rustic-test-count-errors ()
   ;; test error without error code
