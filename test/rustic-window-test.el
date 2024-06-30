@@ -1,5 +1,6 @@
 ;; -*- lexical-binding: t -*-
 (require 'rustic)
+(require 'test-helper)
 
 (ert-deftest rustic-test-window-count ()
   (should (= (length (window-list)) 1))

@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t -*-
 ;; Before editing, eval (load-file "test-helper.el")
 (require 'rustic)
+(require 'test-helper)
 
 (ert-deftest rust-test-workspace-crate-location ()
   (should (equal (funcall rustic-compile-directory-method) default-directory))
