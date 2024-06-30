@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t -*-
 ;; Before editing, eval (load-file "test-helper.el")
 (require 'rustic)
-(require 'test-helper)
 
 (ert-deftest rustic-test-format-next-error-last-buffer ()
   (let* ((string "fn main()      {}")

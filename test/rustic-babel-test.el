@@ -2,7 +2,6 @@
 ;; Before editing, eval (load-file "test-helper.el")
 
 (require 'ert)
-(require 'test-helper)
 
 (setq org-confirm-babel-evaluate nil)
 

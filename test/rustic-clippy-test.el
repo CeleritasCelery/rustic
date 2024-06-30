@@ -1,7 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
 (require 'rustic)
-(require 'test-helper)
 
 (ert-deftest rustic-test-trigger-and-fix-format-on-compile ()
   (ignore-errors (kill-buffer (get-buffer rustic-compilation-buffer-name)))
